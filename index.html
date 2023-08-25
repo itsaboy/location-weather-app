@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Weather Dashboard</title>
+        <meta name="description" content="A site that lets users see the current weather and a 5-day forecast for various locations">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/layout.css">
+        <link rel="stylesheet" href="./assets/css/variables.css">
+        <link rel="stylesheet" href="./assets/css/style.css">    
+        <link rel="stylesheet" href="./assets/css/anims.css">
+        <link rel="stylesheet" href="./assets/css/queries.css">
+
+        <!-- Scripts -->
+        <script src="" defer></script>
+
+    </head>
+
+    <body>
+        <div class="body-grid-container">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="header-grid-container">
+                    <h1 id="header-heading" class="header-grid-item">
+                        Weather Dashboard
+                    </h1>
+                </div>
+            </header>
+
+            <!-- Main -->
+            <main id="main">
+                <div class="main-grid-container">
+
+                    <!-- Search -->
+                    <section id="search" class="main-grid-item">
+                        <div class="search-grid-container">
+                            <h3 id="search-heading">
+                                Search a City
+                            </h3>
+                            <input id="search-input">
+                            <button id="search-button">
+                                Search
+                                <img class="action-icon" src="./assets/icons/actions/search.svg">
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- History -->
+                    <section id="history" class="main-grid-item">
+                        <div class="history-grid-container">
+                            <h3 id="history-heading">
+                                Search History
+                            </h3>
+                        </div>
+                    </section>
+
+                    <!-- Current Weather -->
+                    <section id="current-weather" class="main-grid-item">
+                        <div class="weather-grid-container">
+                            <h3 id="current-date" class="weather-grid-item">
+                                MM/DD/YYYY
+                            </h3>
+                            <h3 id="current-time" class="weather-grid-item">
+                                00:00:00
+                            </h3>
+                            <h3 id="selected-city" class="weather-grid-item">
+                                Selected City
+                            </h3>
+                            <h3 id="current-temp" class="weather-grid-item">
+                                Current Temp
+                            </h3>
+                            <img id="weather-icon" class="weather-grid-item">
+                            <h3 id="current-wind" class="weather-grid-item">
+                                Wind Speed
+                            </h3>
+                            <h3 id="current-humidity" class="weather-grid-item">
+                                Humidity
+                            </h3>
+                        </div>
+                    </section>
+
+                    <!-- 5-Day Forecast -->
+                    <section id="weather-forecast" class="main-grid-item">
+                        <div class="forecast-grid-container">
+                            <h3 id="forecast-heading">
+                                5-Day Forecast
+                            </h3>
+                            
+                            <!-- Day One -->
+                            <section id="day1">
+                                <div class="forecast-day-grid-container">
+                                    <h4 id="day1-date" class="forecast-day-grid-item">
+                                        MM/DD/YYYY
+                                    </h4>
+                                    <h4 id="day1-temp" class="forecast-day-grid-item">
+                                        Forecast Temp
+                                    </h4>
+                                    <img id="day1-icon" class="forecast-day-grid-item">
+                                    <h4 id="day1-wind" class="forecast-day-grid-item">
+                                        Wind Speed
+                                    </h4>
+                                    <h4 id="day1-humidity" class="forecast-day-grid-item">
+                                        Humidity
+                                    </h4>
+                                </div>
+                            </section>
+
+                            <!-- Day Two -->
+                            <section id="day2">
+                                <div class="forecast-day-grid-container">
+                                    <h4 id="day2-date" class="forecast-day-grid-item">
+                                        MM/DD/YYYY
+                                    </h4>
+                                    <h4 id="day2-temp" class="forecast-day-grid-item">
+                                        Forecast Temp
+                                    </h4>
+                                    <img id="day2-icon" class="forecast-day-grid-item">
+                                    <h4 id="day2-wind" class="forecast-day-grid-item">
+                                        Wind Speed
+                                    </h4>
+                                    <h4 id="day2-humidity" class="forecast-day-grid-item">
+                                        Humidity
+                                    </h4>
+                                </div>
+                            </section>
+
+                            <!-- Day Three -->
+                            <section id="day3">
+                                <div class="forecast-day-grid-container">
+                                    <h4 id="day3-date" class="forecast-day-grid-item">
+                                        MM/DD/YYYY
+                                    </h4>
+                                    <h4 id="day3-temp" class="forecast-day-grid-item">
+                                        Forecast Temp
+                                    </h4>
+                                    <img id="day3-icon" class="forecast-day-grid-item">
+                                    <h4 id="day3-wind" class="forecast-day-grid-item">
+                                        Wind Speed
+                                    </h4>
+                                    <h4 id="day3-humidity" class="forecast-day-grid-item">
+                                        Humidity
+                                    </h4>
+                                </div>
+                            </section>
+
+                            <!-- Day Four -->
+                            <section id="day4">
+                                <div class="forecast-day-grid-container">
+                                    <h4 id="day4-date" class="forecast-day-grid-item">
+                                        MM/DD/YYYY
+                                    </h4>
+                                    <h4 id="day4-temp" class="forecast-day-grid-item">
+                                        Forecast Temp
+                                    </h4>
+                                    <img id="day4-icon" class="forecast-day-grid-item">
+                                    <h4 id="day4-wind" class="forecast-day-grid-item">
+                                        Wind Speed
+                                    </h4>
+                                    <h4 id="day4-humidity" class="forecast-day-grid-item">
+                                        Humidity
+                                    </h4>
+                                </div>
+                            </section>
+
+                            <!-- Day Five -->
+                            <section id="day5">
+                                <h4 id="day5-date" class="forecast-day-grid-item">
+                                    MM/DD/YYYY
+                                </h4>
+                                <div class="forecast-day-grid-container">
+                                    <h4 id="day5-temp" class="forecast-day-grid-item">
+                                        Forecast Temp
+                                    </h4>
+                                    <img id="day5-icon" class="forecast-day-grid-item">
+                                    <h4 id="day5-wind" class="forecast-day-grid-item">
+                                        Wind Speed
+                                    </h4>
+                                    <h4 id="day5-humidity" class="forecast-day-grid-item">
+                                        Humidity
+                                    </h4>
+                                </div>
+                            </section>
+
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+        </div>
+    </body>
+
+</html>
