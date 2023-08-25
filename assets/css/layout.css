@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Body Grid Container
+========================================================================== */
+
+.body-grid-container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+/* Body Grid Item IDs */
+
+#header {
+    grid-area: header;
+}
+
+#main {
+    grid-area: main;
+}
+
+/* Body Item Containers */
+
+.body-item-container {
+    display: grid;
+    height: 100%;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Header Grid Container
+========================================================================== */
+
+.header-grid-container {
+    grid-template-areas:
+    "header-heading";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+/* Header Grid Item IDs */
+
+#header-heading {
+    grid-area: header-heading;
+}
+
+/* ==========================================================================
+   Main Grid Container
+========================================================================== */
+
+.main-grid-container {
+    grid-template-areas:
+    "search current-weather"
+    "history weather-forecast";
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr 4fr;
+}
+
+/* Main Grid Item IDs */
+
+#search {
+    grid-area: search;
+}
+
+#history {
+    grid-area: history;
+}
+
+#current-weather {
+    grid-area: current-weather;
+}
+
+#weather-forecast {
+    grid-area: weather-forecast;
+}
+
+/* Main Item Containers */
+
+.main-item-container {
+    display: grid;
+    width: 75%;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Search Grid Container
+========================================================================== */
+
+.search-grid-container {
+    grid-template-areas:
+    "search-heading"
+    "search-input"
+    "search-button";
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr; 
+}
+
+/* Search Grid Item IDs */
+
+#search-heading {
+    grid-area: search-heading;
+}
+
+#search-input {
+    grid-area: search-input;
+}
+
+#search-button {
+    grid-area: search-button;
+}
+
+/* History Grid Container
+========================================================================== */
+
+.history-grid-container {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(8rem, 100%),
+                1fr
+            )
+        );    
+}
+
+/* Weather Grid Container
+========================================================================== */
+
+.weather-grid-container {
+    grid-template-areas:
+    "current-date current-time"
+    "selected-city current-temp"
+    "weather-icon current-wind"
+    "weather-descr current-humidity";
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Weather Grid Item IDs */
+
+#current-date {
+    grid-area: current-date;
+}
+
+#current-time {
+    grid-area: current-time;
+}
+
+#selected-city {
+    grid-area: selected-city;
+}
+
+#current-temp {
+    grid-area: current-temp;
+}
+
+#weather-icon {
+    grid-area: weather-icon;
+}
+
+#weather-descr {
+    grid-area: weather-descr;
+}
+
+#current-wind {
+    grid-area: current-wind;
+}
+
+#current-humidity {
+    grid-area: current-humidity;
+}
+
+/* Forecast Grid Container
+========================================================================== */
+
+.forecast-grid-container {
+    grid-template-areas:
+    "forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading"
+    "day1 day2 day3 day4 day5";
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* Forecast Grid Item IDs */
+
+#forecast-heading {
+    grid-area: forecast-heading;
+    place-self: end center;
+}
+
+#day1 {
+    grid-area: day1;
+}
+
+#day2 {
+    grid-area: day2;
+}
+
+#day3 {
+    grid-area: day3;
+}
+
+#day4 {
+    grid-area: day4;
+}
+
+#day5 {
+    grid-area: day5;
+}
+
+/* Forecast Day Grid Container
+========================================================================== */
+
+.forecast-day-grid-container {
+    display: grid;
+    gap: 3rem;  
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(10rem, 100%),
+                1fr
+            )
+        );    
+}
