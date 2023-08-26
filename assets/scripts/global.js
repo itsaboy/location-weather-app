@@ -1,6 +1,6 @@
 // API variables
 const endpointRoot = "https://api.openweathermap.org";
-// key goes here
+const weatherAPIKey = "";
 
 // Search variables
 let history = [];
