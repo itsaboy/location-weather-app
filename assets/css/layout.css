@@ -6,8 +6,9 @@
     display: grid;
     grid-template-areas:
     "header"
-    "main";
-    grid-template-rows: 1fr 9fr;
+    "main"
+    "footer";
+    grid-template-rows: 1fr 8fr 1fr;
     grid-template-columns: 1fr;
     height: 100vh;
 }
@@ -26,8 +27,11 @@
 
 .body-item-container {
     display: grid;
+    width: 95%;
     height: 100%;
     text-align: center;
+    margin: 0 auto;
+    gap: 3rem;
 }
 
 /* ==========================================================================
@@ -36,15 +40,21 @@
 
 .header-grid-container {
     grid-template-areas:
-    "header-heading";
+    "status header-heading";
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Header Grid Item IDs */
 
 #header-heading {
     grid-area: header-heading;
+    place-self: center end;
+}
+
+#status {
+    grid-area: status;
+    place-self: center;
 }
 
 /* ==========================================================================
@@ -55,7 +65,7 @@
     grid-template-areas:
     "search current-weather"
     "history weather-forecast";
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr 4fr;
 }
 
@@ -81,7 +91,6 @@
 
 .main-item-container {
     display: grid;
-    width: 75%;
     height: 100%;
     place-items: center;
     text-align: center;
@@ -114,6 +123,12 @@
     grid-area: search-button;
 }
 
+/* Search Form */
+
+.search-form {
+    height: 100%;
+}
+
 /* History Grid Container
 ========================================================================== */
 
@@ -134,12 +149,11 @@
 
 .weather-grid-container {
     grid-template-areas:
-    "current-date current-time"
-    "selected-city current-temp"
-    "weather-icon current-wind"
-    "weather-descr current-humidity";
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+    "current-date selected-city current-icon current-wind"
+    "current-time current-temp weather-descr current-humidity";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
 }
 
 /* Weather Grid Item IDs */
@@ -160,8 +174,8 @@
     grid-area: current-temp;
 }
 
-#weather-icon {
-    grid-area: weather-icon;
+#current-icon {
+    grid-area: current-icon;
 }
 
 #weather-descr {
@@ -185,6 +199,8 @@
     "day1 day2 day3 day4 day5";
     grid-template-rows: 1fr 4fr;
     grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+    gap: 3rem;
 }
 
 /* Forecast Grid Item IDs */
@@ -217,9 +233,16 @@
 /* Forecast Day Grid Container
 ========================================================================== */
 
+.forecast-section {
+    min-width: 100%;
+}
+
 .forecast-day-grid-container {
     display: grid;
-    gap: 3rem;  
+    gap: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    place-items: center;
     grid-template-columns:
         repeat(
             auto-fit,
@@ -227,5 +250,5 @@
                 min(10rem, 100%),
                 1fr
             )
-        );    
+        );   
 }

@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Body Styles
+========================================================================== */
+
+body {
+    font-family: Ubuntu;
+    background-color: var(--dark-blue);
+}
+
+/* ==========================================================================
+   Header Styles
+========================================================================== */
+
+.title {
+    font-size: var(--largest-txt);
+    color: var(--light-blue);
+}
+
+.status {
+    font-size: var(--large-txt);
+    color: var(--yellow);
+}
+
+/* ==========================================================================
+   Main Styles
+========================================================================== */
+
+.main-grid-item {
+    background-color: var(--reg-blue);
+    color: var(--black);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-elevation-high);
+}
+
+.heading {
+    font-size: var(--large-txt);
+}
+
+.weather-icon {
+    width: clamp(2rem, 2.5vw, 6rem);
+}
+
+/* Search Section Styles
+========================================================================== */
+
+.search-input{
+    width: 50%;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.search-button{
+    width: clamp(3rem, 33% + 1px, 10rem);
+    padding: 0.5rem;
+    text-align: center;
+    border: none;
+    border-right: 5px solid var(--dark-blue);
+    border-bottom: 5px solid var(--dark-blue);
+    border-radius: 1rem;
+    background-color: var(--white);
+}
+
+/* History Section Styles
+========================================================================== */
+
+.history-button {
+    width: clamp(3rem, 66% + 1px, 10rem);
+    height: auto;
+    font-size: var(--small-txt);
+    padding: 0.75rem 0;
+    border: none;
+    border-right: 3px solid var(--black);
+    border-bottom: 3px solid var(--black);
+    border-radius: 1rem;
+}
+
+/* Current Weather Section Styles
+========================================================================== */
+
+.weather-grid-item {
+    font-size: var(--normal-txt);
+}
+
+/* Weather Forecast Section Styles
+========================================================================== */
+
+.forecast-day-grid-container {
+    background-color: var(--light-blue);
+    padding: 1.75rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+.forecast-day-grid-item {
+    font-size: var(--small-txt);
+}

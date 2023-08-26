@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Custom Variables
+========================================================================== */
+
+:root {
+
+    /* Colors */
+    --dark-blue: rgb(65, 65, 100);
+    --reg-blue: rgb(8,146,208);
+    --light-blue: rgb(210, 195, 220);
+    --black: rgb(15,15,15);
+    --white: rgb(225,225,225);
+    --yellow: rgb(224,231,34);
+
+    /* Font Sizes */
+    --largest-txt: clamp(1rem, 3vw + 1rem, 5rem);
+    --large-txt: clamp(1rem, 2.5vw + 1rem, 2rem);
+    --normal-txt: clamp(0.8rem, 1.75vw + 1rem, 1.75rem);
+    --small-txt: clamp(0.75rem, 0.25vh + 1rem, 1.5rem);
+
+    /* Box Shadows */
+    --shadow-color: 0deg 0% 0%;
+    --shadow-elevation-low:
+      0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.19),
+      0.5px 0.5px 0.7px -1.9px hsl(var(--shadow-color) / 0.15),
+      1.5px 1.5px 2px -3.7px hsl(var(--shadow-color) / 0.11);
+    --shadow-elevation-medium:
+      0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.2),
+      0.9px 0.9px 1.2px -1.2px hsl(var(--shadow-color) / 0.17),
+      2.7px 2.7px 3.6px -2.5px hsl(var(--shadow-color) / 0.14),
+      7.4px 7.3px 9.7px -3.7px hsl(var(--shadow-color) / 0.1);
+    --shadow-elevation-high:
+      0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.22),
+      1.6px 1.5px 2.1px -0.6px hsl(var(--shadow-color) / 0.2),
+      3.5px 3.5px 4.6px -1.2px hsl(var(--shadow-color) / 0.18),
+      7.3px 7.2px 9.6px -1.9px hsl(var(--shadow-color) / 0.15),
+      14.1px 13.8px 18.5px -2.5px hsl(var(--shadow-color) / 0.13),
+      24.9px 24.5px 32.7px -3.1px hsl(var(--shadow-color) / 0.11),
+      41px 40.3px 53.9px -3.7px hsl(var(--shadow-color) / 0.09);
+}
+
+/* ==========================================================================
+   Custom Fonts
+========================================================================== */
+
+@font-face {
+    font-family: Ubuntu;
+    src: url("../fonts/Ubuntu-Regular.ttf");
+}

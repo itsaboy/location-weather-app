@@ -19,8 +19,16 @@
         <link rel="stylesheet" href="./assets/css/anims.css">
         <link rel="stylesheet" href="./assets/css/queries.css">
 
-        <!-- Scripts -->
-        <script src="" defer></script>
+        <!-- External Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/plugin/utc.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/plugin/timezone.min.js" defer></script>
+
+        <!-- Internal Scripts -->
+        <script src="./assets/scripts/global.js" defer></script>
+        <script src="./assets/scripts/main.js" defer></script>
+        <script src="./assets/scripts/init.js" defer></script>
 
     </head>
 
@@ -30,9 +38,12 @@
             <!-- Header -->
             <header id="header">
                 <div class="header-grid-container body-item-container">
-                    <h1 id="header-heading" class="header-grid-item">
+                    <h1 id="header-heading" class="header-grid-item title">
                         Weather Dashboard
                     </h1>
+                    <h2 id="status" class="header-grid-item status hide">
+                        <!-- Content injected by main.js -->
+                    </h2>
                 </div>
             </header>
 
@@ -42,166 +53,167 @@
 
                     <!-- Search -->
                     <section id="search" class="main-grid-item">
-                        <div class="search-grid-container main-item-container">
-                            <h3 id="search-heading">
-                                Search a City
-                            </h3>
-                            <input id="search-input">
-                            <button id="search-button">
-                                Search
-                                <img class="action-icon" src="./assets/icons/actions/search.svg">
-                            </button>
-                        </div>
+                        <form class="search-form">
+                            <div class="search-grid-container main-item-container">
+                                <h3 id="search-heading" class="heading">
+                                    Search a City
+                                </h3>
+                                <input id="search-input" class="search-grid-item search-input">
+                                <button id="search-button" class="search-grid-item search-button" title="Search">
+                                    <img class="action-icon" src="./assets/icons/actions/search.svg">
+                                </button>
+                            </div>
+                        </form>
                     </section>
 
                     <!-- History -->
                     <section id="history" class="main-grid-item">
-                        <div class="history-grid-container main-item-container">
-                            
+                        <div class="history-grid-container main-item-container show">
+                            <!-- Content injected by main.js -->
                         </div>
                     </section>
 
                     <!-- Current Weather -->
                     <section id="current-weather" class="main-grid-item">
-                        <div class="weather-grid-container main-item-container">
+                        <div class="weather-grid-container main-item-container show">
                             <h3 id="current-date" class="weather-grid-item">
-                                MM/DD/YYYY
+                                <!-- Content injected by init.js -->
                             </h3>
                             <h3 id="current-time" class="weather-grid-item">
-                                00:00:00
+                                <!-- Content injected by init.js -->
                             </h3>
                             <h3 id="selected-city" class="weather-grid-item">
-                                Selected City
+                                <!-- Content injected by main.js -->
                             </h3>
                             <h3 id="current-temp" class="weather-grid-item">
-                                Current Temp
+                                <!-- Content injected by main.js -->
                             </h3>
-                            <img id="weather-icon" class="weather-grid-item">
+                            <img id="current-icon" class="weather-grid-item weather-icon">
                             <h3 id="weather-descr" class="weather-grid-item">
-                                Weather Description
+                                <!-- Content injected by main.js -->
                             </h3>
                             <h3 id="current-wind" class="weather-grid-item">
-                                Wind Speed
+                                <!-- Content injected by main.js -->
                             </h3>
                             <h3 id="current-humidity" class="weather-grid-item">
-                                Humidity
+                                <!-- Content injected by main.js -->
                             </h3>
                         </div>
                     </section>
 
                     <!-- 5-Day Forecast -->
                     <section id="weather-forecast" class="main-grid-item">
-                        <div class="forecast-grid-container main-item-container">
-                            <h3 id="forecast-heading">
+                        <div class="forecast-grid-container main-item-container show">
+                            <h3 id="forecast-heading" class="heading">
                                 5-Day Forecast
                             </h3>
                             
                             <!-- Day One -->
-                            <section id="day1">
-                                <div class="forecast-day-grid-container">
+                            <section id="day1" class="forecast-section">
+                                <div class="forecast-day-grid-container hide">
                                     <h4 id="day1-date" class="forecast-day-grid-item">
-                                        MM/DD/YYYY
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day1-temp" class="forecast-day-grid-item">
-                                        Forecast Temp
+                                        <!-- Content injected by main.js -->
                                     </h4>
-                                    <img id="day1-icon" class="forecast-day-grid-item">
+                                    <img id="day1-icon" class="forecast-day-grid-item weather-icon">
                                     <h4 id="day1-descr" class="forecast-day-grid-item">
-                                        Weather Description
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day1-wind" class="forecast-day-grid-item">
-                                        Wind Speed
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day1-humidity" class="forecast-day-grid-item">
-                                        Humidity
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                 </div>
                             </section>
 
                             <!-- Day Two -->
-                            <section id="day2">
-                                <div class="forecast-day-grid-container">
+                            <section id="day2" class="forecast-section">
+                                <div class="forecast-day-grid-container hide">
                                     <h4 id="day2-date" class="forecast-day-grid-item">
-                                        MM/DD/YYYY
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day2-temp" class="forecast-day-grid-item">
-                                        Forecast Temp
+                                        <!-- Content injected by main.js -->
                                     </h4>
-                                    <img id="day2-icon" class="forecast-day-grid-item">
+                                    <img id="day2-icon" class="forecast-day-grid-item weather-icon">
                                     <h4 id="day2-descr" class="forecast-day-grid-item">
-                                        Weather Description
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day2-wind" class="forecast-day-grid-item">
-                                        Wind Speed
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day2-humidity" class="forecast-day-grid-item">
-                                        Humidity
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                 </div>
                             </section>
 
                             <!-- Day Three -->
-                            <section id="day3">
-                                <div class="forecast-day-grid-container">
+                            <section id="day3" class="forecast-section">
+                                <div class="forecast-day-grid-container hide">
                                     <h4 id="day3-date" class="forecast-day-grid-item">
-                                        MM/DD/YYYY
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day3-temp" class="forecast-day-grid-item">
-                                        Forecast Temp
+                                        <!-- Content injected by main.js -->
                                     </h4>
-                                    <img id="day3-icon" class="forecast-day-grid-item">
+                                    <img id="day3-icon" class="forecast-day-grid-item weather-icon">
                                     <h4 id="day3-descr" class="forecast-day-grid-item">
-                                        Weather Description
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day3-wind" class="forecast-day-grid-item">
-                                        Wind Speed
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day3-humidity" class="forecast-day-grid-item">
-                                        Humidity
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                 </div>
                             </section>
 
                             <!-- Day Four -->
-                            <section id="day4">
-                                <div class="forecast-day-grid-container">
+                            <section id="day4" class="forecast-section">
+                                <div class="forecast-day-grid-container hide">
                                     <h4 id="day4-date" class="forecast-day-grid-item">
-                                        MM/DD/YYYY
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day4-temp" class="forecast-day-grid-item">
-                                        Forecast Temp
+                                        <!-- Content injected by main.js -->
                                     </h4>
-                                    <img id="day4-icon" class="forecast-day-grid-item">
+                                    <img id="day4-icon" class="forecast-day-grid-item weather-icon">
                                     <h4 id="day4-descr" class="forecast-day-grid-item">
-                                        Weather Description
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day4-wind" class="forecast-day-grid-item">
-                                        Wind Speed
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day4-humidity" class="forecast-day-grid-item">
-                                        Humidity
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                 </div>
                             </section>
 
                             <!-- Day Five -->
-                            <section id="day5">
-                                <div class="forecast-day-grid-container">
+                            <section id="day5" class="forecast-section">
+                                <div class="forecast-day-grid-container hide">
                                     <h4 id="day5-date" class="forecast-day-grid-item">
-                                        MM/DD/YYYY
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day5-temp" class="forecast-day-grid-item">
-                                        Forecast Temp
+                                        <!-- Content injected by main.js -->
                                     </h4>
-                                    <img id="day5-icon" class="forecast-day-grid-item">
+                                    <img id="day5-icon" class="forecast-day-grid-item weather-icon">
                                     <h4 id="day5-descr" class="forecast-day-grid-item">
-                                        Weather Description
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day5-wind" class="forecast-day-grid-item">
-                                        Wind Speed
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                     <h4 id="day5-humidity" class="forecast-day-grid-item">
-                                        Humidity
+                                        <!-- Content injected by main.js -->
                                     </h4>
                                 </div>
                             </section>
@@ -210,6 +222,11 @@
                     </section>
                 </div>
             </main>
+
+            <!-- Footer -->
+            <footer>
+                <!-- No content, just used to create space at bottom of page -->
+            </footer>
 
         </div>
     </body>

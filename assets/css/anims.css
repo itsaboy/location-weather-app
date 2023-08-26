@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Hide and Show Elements
+========================================================================== */
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* ==========================================================================
+   Button Pseudos
+========================================================================== */
+
+.search-button:hover {
+    cursor: pointer;
+}
+
+.history-button:hover {
+    cursor: pointer;
+}
+
+.search-button:active {
+    border: none;
+    transform: translateY(3px);
+}
+
+.history-button:active {
+    border: none;
+    transform: translateY(2px);
+}
