@@ -55,10 +55,165 @@
                     <section id="search" class="main-grid-item">
                         <form class="search-form">
                             <div class="search-grid-container main-item-container">
-                                <h3 id="search-heading" class="heading">
-                                    Search a City
-                                </h3>
-                                <input id="search-input" class="search-grid-item search-input">
+                                <label id="city-label" class="search-grid-item search-label" for="city-input">
+                                    City Name
+                                </label>
+                                <input id="city-input" class="search-grid-item search-input" name="city" type="text" required>
+                                <label id="state-label" class="search-grid-item search-label" for="state-input">
+                                    State
+                                </label>
+                                <select id="state-input" class="search-grid-item search-dropdown" name="state">
+                                    <option class="state-option" value="Alabama">
+                                        AL
+                                    </option>
+                                    <option class="state-option" value="Alaska">
+                                        AK
+                                    </option>
+                                    <option class="state-option" value="Arizona">
+                                        AZ
+                                    </option>
+                                    <option class="state-option" value="Arkansas">
+                                        AR
+                                    </option>
+                                    <option class="state-option" value="California">
+                                        CA
+                                    </option>
+                                    <option class="state-option" value="Colorado">
+                                        CO
+                                    </option>
+                                    <option class="state-option" value="Connecticut">
+                                        CT
+                                    </option>
+                                    <option class="state-option" value="Delaware">
+                                        DE
+                                    </option>
+                                    <option class="state-option" value="Florida">
+                                        FL
+                                    </option>
+                                    <option class="state-option" value="Georgia">
+                                        GA
+                                    </option>
+                                    <option class="state-option" value="Hawaii">
+                                        HI
+                                    </option>
+                                    <option class="state-option" value="Idaho">
+                                        ID
+                                    </option>
+                                    <option class="state-option" value="Illinois">
+                                        IL
+                                    </option>
+                                    <option class="state-option" value="Indiana">
+                                        IN
+                                    </option>
+                                    <option class="state-option" value="Iowa">
+                                        IA
+                                    </option>
+                                    <option class="state-option" value="Kansas">
+                                        KS
+                                    </option>
+                                    <option class="state-option" value="Kentucky">
+                                        KY
+                                    </option>
+                                    <option class="state-option" value="Louisiana">
+                                        LA
+                                    </option>
+                                    <option class="state-option" value="Maine">
+                                        ME
+                                    </option>
+                                    <option class="state-option" value="Maryland">
+                                        MD
+                                    </option>
+                                    <option class="state-option" value="Massachusetts">
+                                        MA
+                                    </option>
+                                    <option class="state-option" value="Michigan">
+                                        MI
+                                    </option>
+                                    <option class="state-option" value="Minnesota">
+                                        MN
+                                    </option>
+                                    <option class="state-option" value="Mississippi">
+                                        MS
+                                    </option>
+                                    <option class="state-option" value="Missouri">
+                                        MO
+                                    </option>
+                                    <option class="state-option" value="Montana">
+                                        MT
+                                    </option>
+                                    <option class="state-option" value="Nebraska">
+                                        NE
+                                    </option>
+                                    <option class="state-option" value="Nevada">
+                                        NV
+                                    </option>
+                                    <option class="state-option" value="New Hampshire">
+                                        NH
+                                    </option>
+                                    <option class="state-option" value="New Jersey">
+                                        NJ
+                                    </option>
+                                    <option class="state-option" value="New Mexico">
+                                        NM
+                                    </option>
+                                    <option class="state-option" value="New York">
+                                        NY
+                                    </option>
+                                    <option class="state-option" value="North Carolina">
+                                        NC
+                                    </option>
+                                    <option class="state-option" value="North Dakota">
+                                        ND
+                                    </option>
+                                    <option class="state-option" value="Ohio">
+                                        OH
+                                    </option>
+                                    <option class="state-option" value="Oklahoma">
+                                        OK
+                                    </option>
+                                    <option class="state-option" value="Oregon">
+                                        OR
+                                    </option>
+                                    <option class="state-option" value="Pennsylvania">
+                                        PA
+                                    </option>
+                                    <option class="state-option" value="Rhode Island">
+                                        RI
+                                    </option>
+                                    <option class="state-option" value="South Carolina">
+                                        SC
+                                    </option>
+                                    <option class="state-option" value="South Dakota">
+                                        SD
+                                    </option>
+                                    <option class="state-option" value="Tennessee">
+                                        TN
+                                    </option>
+                                    <option class="state-option" value="Texas">
+                                        TX
+                                    </option>
+                                    <option class="state-option" value="Utah">
+                                        UT
+                                    </option>
+                                    <option class="state-option" value="Vermont">
+                                        VT
+                                    </option>
+                                    <option class="state-option" value="Virginia">
+                                        VA
+                                    </option>
+                                    <option class="state-option" value="Washington">
+                                        WA
+                                    </option>
+                                    <option class="state-option" value="West Virginia">
+                                        WV
+                                    </option>
+                                    <option class="state-option" value="Wisconsin">
+                                        WI
+                                    </option>
+                                    <option class="state-option" value="Wyoming">
+                                        WY  
+                                    </option>
+                                </select>
                                 <button id="search-button" class="search-grid-item search-button" title="Search">
                                     <img class="action-icon" src="./assets/icons/actions/search.svg">
                                 </button>
@@ -68,9 +223,19 @@
 
                     <!-- History -->
                     <section id="history" class="main-grid-item">
-                        <div class="history-grid-container main-item-container show">
-                            <!-- Content injected by main.js -->
-                        </div>
+                        <form class="history-form">
+                            <div class="history-grid-container main-item-container">
+                                <label id="history-label" class="history-grid-item history-label">
+                                    History
+                                </label>
+                                <select id="history-input" class="history-grid-item history-dropdown">
+                                    <!-- Content injected by main.js -->
+                                </select>
+                                <button id="history-button" class="history-grid-item history-button">
+                                    <img class="action-icon" src="./assets/icons/actions/search.svg">
+                                </button>
+                            </div>
+                        </form>
                     </section>
 
                     <!-- Current Weather -->

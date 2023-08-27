@@ -1,9 +1,11 @@
-const getLocation = async () => {
-    const req = `${endpointRoot}/geo/1.0/direct?q=${city}&limit=&appid=${weatherAPIKey}`;
+const getLocation = async (cityPlusState) => {
+    const req = `${endpointRoot}/geo/1.0/direct?q=${cityPlusState.city},${cityPlusState.state}&limit=&appid=${weatherAPIKey}`;
     const res = await fetch(req);
     const geoData = await res.json();
 
-    if (history.includes(city) && newSearch === true) {
+    if (history.some(obj => obj.city === cityPlusState.city)
+        && history.some(obj => obj.state === cityPlusState.state)
+        && newSearch === true) {
         newSearch = false;
         let message = "Already in history!";
         showStatus(message);
@@ -18,7 +20,7 @@ const getLocation = async () => {
             let message = "Loading...";
             showStatus(message);
             if (res.status === 200 && newSearch === true) {
-                history.push(city);
+                history.push(cityPlusState);
                 saveData();
                 getWeather(geoData[0]);
                 getForecast(geoData[0]);
@@ -100,7 +102,7 @@ const getForecast = async (data) => {
 
 // Update current weather
 const updateCurrentWeather = () => {
-    $("#selected-city").text(city);
+    $("#selected-city").text(`${cityPlusState.city}, ${cityPlusState.state}`);
     $("#weather-descr").text(currentWeather);
     $("#current-temp").text(currentTemperature);
     $("#current-wind").text(`Wind: ${currentWindSpeed} mph`);
@@ -210,9 +212,8 @@ const updateForecast = () => {
 const saveData = () => {
     newSearch = false;
     for (let i = 0; i < history.length; i++) {
-        localStorage.setItem(i, history[i]);
+        localStorage.setItem(i, JSON.stringify(history[i]));
     };
-    console.log(history);
     loadData();
 };
 
@@ -220,33 +221,19 @@ const saveData = () => {
 const loadData = () => {
     history = [];
     for (let i = 0; i < localStorage.length; i++) {
-        history.push(localStorage[i]); 
+        history.push(JSON.parse(localStorage[i])); 
     };
-    console.log(history);
     populateHistory();
 };
 
 // Populate history
 const populateHistory = () => {
-    $(".history-grid-container").empty();    
+    $("#history-input").empty();    
     for (let i = 0; i < history.length; i++) {
-        let newButton = $(`<button>${history[i]}</button>`);
-        newButton.attr("id", `${history[i]}`).addClass("history-button");
-        $(".history-grid-container").append(newButton);
+        let newOption = $(`<option>${history[i].city}, ${history[i].state}</option>`);
+        newOption.attr("city", `${history[i].city}`).attr("state", `${history[i].state}`).addClass("history-option");
+        $(".history-dropdown").append(newOption);
     };
-    historyButtons();
-};
-
-// History button event listener
-const historyButtons = () => {
-    $(".history-button").on("click", function () {
-        city = $(this).attr("id");
-        for (let i = 0; i < history.length; i++) {
-            if (city === history[i]) {
-                getLocation(city);
-            };
-        };
-    });
 };
 
 // Show or hide elements

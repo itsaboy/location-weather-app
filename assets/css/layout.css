@@ -102,21 +102,29 @@
 
 .search-grid-container {
     grid-template-areas:
-    "search-heading"
-    "search-input"
-    "search-button";
+    "city-label state-label"
+    "city-input state-input"
+    "search-button search-button";
     grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat(2, 1fr); 
 }
 
 /* Search Grid Item IDs */
 
-#search-heading {
-    grid-area: search-heading;
+#city-label {
+    grid-area: city-label;
 }
 
-#search-input {
-    grid-area: search-input;
+#city-input {
+    grid-area: city-input;
+}
+
+#state-label {
+    grid-area: state-label;
+}
+
+#state-input {
+    grid-area: state-input;
 }
 
 #search-button {
@@ -133,15 +141,34 @@
 ========================================================================== */
 
 .history-grid-container {
-    display: grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(
-                min(8rem, 100%),
-                1fr
-            )
-        );    
+    grid-template-areas:
+    "history-label"
+    "history-input"
+    "history-button";
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 1fr;
+}
+
+/* History Grid Item IDs */
+
+#history-label {
+    grid-area: history-label;
+}
+
+#history-input {
+    grid-area: history-input;
+    place-self: start center;
+}
+
+#history-button {
+    grid-area: history-button;
+    place-self: start center;
+}
+
+/* History Form */
+
+.history-form {
+    height: 100%;
 }
 
 /* Weather Grid Container
@@ -235,6 +262,7 @@
 
 .forecast-section {
     min-width: 100%;
+    min-height: 100%;
 }
 
 .forecast-day-grid-container {

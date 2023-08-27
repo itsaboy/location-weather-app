@@ -43,14 +43,25 @@ body {
 /* Search Section Styles
 ========================================================================== */
 
+.search-label {
+    font-size: var(--small-txt);
+}
+
 .search-input{
-    width: 50%;
+    width: clamp(5rem, 66% + 1px, 10rem);
     padding: 0.5rem;
     text-align: center;
     background-color: var(--white);
 }
 
-.search-button{
+.search-dropdown{
+    width: clamp(4rem, 33% + 1px, 10rem);
+    padding: 0.5rem;
+    text-align: left;
+    background-color: var(--white);
+}
+
+.search-button {
     width: clamp(3rem, 33% + 1px, 10rem);
     padding: 0.5rem;
     text-align: center;
@@ -64,15 +75,27 @@ body {
 /* History Section Styles
 ========================================================================== */
 
-.history-button {
-    width: clamp(3rem, 66% + 1px, 10rem);
-    height: auto;
+.history-label {
+    font-size: var(--normal-txt);
+}
+
+.history-dropdown {
     font-size: var(--small-txt);
-    padding: 0.75rem 0;
+    width: clamp(4rem, 66% + 1px, 10rem);
+    padding: 0.5rem;
+    text-align: left;
+    background-color: var(--white);
+}
+
+.history-button {
+    width: clamp(3rem, 33% + 1px, 10rem);
+    padding: 0.5rem;
+    text-align: center;
     border: none;
-    border-right: 3px solid var(--black);
-    border-bottom: 3px solid var(--black);
+    border-right: 5px solid var(--dark-blue);
+    border-bottom: 5px solid var(--dark-blue);
     border-radius: 1rem;
+    background-color: var(--white);
 }
 
 /* Current Weather Section Styles
