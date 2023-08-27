@@ -60,7 +60,7 @@ $().ready(() => {
     };
 
     // Function Calls
-    setInterval(getDateAndTime, 1);
+    getDateAndTime();
     loadData();
     searchForCity();
     optionSelection();

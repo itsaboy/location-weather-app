@@ -1,6 +1,6 @@
 // API variables
 const endpointRoot = "https://api.openweathermap.org";
-const weatherAPIKey = "";
+const weatherAPIKey = "fd03838b9b2723c3ea2712dc8e4df0e6";
 
 // Search variables
 let history = [];
@@ -45,7 +45,7 @@ let dayFiveWindSpeed;
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
 
-// Current Date
+// Current Time
 let currentDate;
 let currentTime;
 
