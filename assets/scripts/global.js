@@ -63,3 +63,4 @@ const cloudy = "./assets/icons/weather/cloudy.svg";
 const rainy = "./assets/icons/weather/rainy.svg";
 const stormy = "./assets/icons/weather/stormy.svg";
 const snowy = "./assets/icons/weather/snowy.svg";
+const misty = "./assets/icons/weather/misty.svg"

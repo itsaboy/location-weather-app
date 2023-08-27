@@ -40,7 +40,7 @@ const getWeather = async (data) => {
     let {lat} = data;
     let {lon} = data;
 
-    const req = `${endpointRoot}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}`;
+    const req = `${endpointRoot}/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherAPIKey}`;
     const res = await fetch(req);
     const weatherData = await res.json();
 
@@ -61,7 +61,7 @@ const getForecast = async (data) => {
     let {lat} = data;
     let {lon} = data;
 
-    const req = `${endpointRoot}/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}`;
+    const req = `${endpointRoot}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherAPIKey}`;
     const res = await fetch(req);
     const forecastData = await res.json();
 
@@ -104,7 +104,7 @@ const getForecast = async (data) => {
 const updateCurrentWeather = () => {
     $("#selected-city").text(`${cityPlusState.city}, ${cityPlusState.state}`);
     $("#weather-descr").text(currentWeather);
-    $("#current-temp").text(currentTemperature);
+    $("#current-temp").text(`${currentTemperature}°`);
     $("#current-wind").text(`Wind: ${currentWindSpeed} mph`);
     $("#current-humidity").text(`Humidity: ${currentHumidity}%`);
     if (currentWeather === "Clear") {
@@ -117,6 +117,8 @@ const updateCurrentWeather = () => {
         $("#current-icon").attr("src", stormy);
     } else if (currentWeather === "Snow") {
         $("#current-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 };
 
@@ -124,7 +126,7 @@ const updateCurrentWeather = () => {
 const updateForecast = () => {
     $("#day1-date").text(dayOneDate);
     $("#day1-descr").text(dayOneWeather);
-    $("#day1-temp").text(dayOneTemperature);
+    $("#day1-temp").text(`${dayOneTemperature}°`);
     $("#day1-wind").text(`Wind: ${dayOneWindSpeed} mph`);
     $("#day1-humidity").text(`Humidity: ${dayOneHumidity}%`);
     if (dayOneWeather === "Clear") {
@@ -137,11 +139,13 @@ const updateForecast = () => {
         $("#day1-icon").attr("src", stormy);
     } else if (dayOneWeather === "Snow") {
         $("#day1-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 
     $("#day2-date").text(dayTwoDate);
     $("#day2-descr").text(dayTwoWeather);
-    $("#day2-temp").text(dayTwoTemperature);
+    $("#day2-temp").text(`${dayTwoTemperature}°`);
     $("#day2-wind").text(`Wind: ${dayTwoWindSpeed} mph`);
     $("#day2-humidity").text(`Humidity: ${dayTwoHumidity}%`);
     if (dayTwoWeather === "Clear") {
@@ -154,11 +158,13 @@ const updateForecast = () => {
         $("#day2-icon").attr("src", stormy);
     } else if (dayTwoWeather === "Snow") {
         $("#day2-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 
     $("#day3-date").text(dayThreeDate);
     $("#day3-descr").text(dayThreeWeather);
-    $("#day3-temp").text(dayThreeTemperature);
+    $("#day3-temp").text(`${dayThreeTemperature}°`);
     $("#day3-wind").text(`Wind: ${dayThreeWindSpeed} mph`);
     $("#day3-humidity").text(`Humidity: ${dayThreeHumidity}%`);
     if (dayThreeWeather === "Clear") {
@@ -171,11 +177,13 @@ const updateForecast = () => {
         $("#day3-icon").attr("src", stormy);
     } else if (dayThreeWeather === "Snow") {
         $("#day3-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 
     $("#day4-date").text(dayFourDate);
     $("#day4-descr").text(dayFourWeather);
-    $("#day4-temp").text(dayFourTemperature);
+    $("#day4-temp").text(`${dayFourTemperature}°`);
     $("#day4-wind").text(`Wind: ${dayFourWindSpeed} mph`);
     $("#day4-humidity").text(`Humidity: ${dayFourHumidity}%`);
     if (dayFourWeather === "Clear") {
@@ -188,11 +196,13 @@ const updateForecast = () => {
         $("#day4-icon").attr("src", stormy);
     } else if (dayFourWeather === "Snow") {
         $("#day4-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 
     $("#day5-date").text(dayFiveDate);
     $("#day5-descr").text(dayFiveWeather);
-    $("#day5-temp").text(dayFiveTemperature);
+    $("#day5-temp").text(`${dayFiveTemperature}°`);
     $("#day5-wind").text(`Wind: ${dayFiveWindSpeed} mph`);
     $("#day5-humidity").text(`Humidity: ${dayFiveHumidity}%`);
     if (dayFiveWeather === "Clear") {
@@ -205,6 +215,8 @@ const updateForecast = () => {
         $("#day5-icon").attr("src", stormy);
     } else if (dayFiveWeather === "Snow") {
         $("#day5-icon").attr("src", snowy);
+    } else if (currentWeather === "Mist") {
+        $("#current-icon").attr("src", misty);
     };
 };
 
@@ -228,7 +240,8 @@ const loadData = () => {
 
 // Populate history
 const populateHistory = () => {
-    $("#history-input").empty();    
+    $("#history-input").empty();
+    $("#history-input").append(`<option selected disabled>City, State</option>`);     
     for (let i = 0; i < history.length; i++) {
         let newOption = $(`<option>${history[i].city}, ${history[i].state}</option>`);
         newOption.attr("city", `${history[i].city}`).attr("state", `${history[i].state}`).addClass("history-option");

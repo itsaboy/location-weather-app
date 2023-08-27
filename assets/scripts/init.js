@@ -13,8 +13,8 @@ $().ready(() => {
         $("#search-button").on("click", function (event) {
             event.preventDefault();
             newSearch = true;
-            city = $(this).siblings("#city-input").val();
-            state = $(this).siblings("#state-input").val();
+            city = $(this).siblings("#city-input").val().toUpperCase();
+            state = $(this).siblings("#state-input").val().toUpperCase();
             cityPlusState = {
                 city: city,
                 state: state
@@ -23,22 +23,24 @@ $().ready(() => {
         });
     };
 
-    // History button event listener
-    const historyLoad = () => {
+    // Option selection
+    const optionSelection = () => {
         $("#history-input").on("change", function () {
-            city = $(this).children().attr("city");
-            state = $(this).children().attr("state");
+            city = $("#history-input option:selected").attr("city");
+            state = $("#history-input option:selected").attr("state");
             cityPlusState = {
                 city: city,
                 state: state
             };
             console.log(cityPlusState);
-        })
-        $(".history-button").on("click", function (event) {
+        });
+    };
+
+    // History button event listener
+    const historyLoad = () => {
+        $("#history-button").on("click", function (event) {
             event.preventDefault();
             newSearch = false;
-            //city = $(this).siblings("#history-input").children(".history-option").attr("city");
-            //state = $(this).siblings("#history-input").children(".history-option").attr("state");
             for (let i = 0; i < history.length; i++) {
                 if (cityPlusState.city === history[i].city && cityPlusState.state === history[i].state) {
                     getLocation(cityPlusState);
@@ -51,6 +53,7 @@ $().ready(() => {
     setInterval(getDateAndTime, 1);
     loadData();
     searchForCity();
+    optionSelection();
     historyLoad();
 
 });
