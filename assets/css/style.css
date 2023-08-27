@@ -5,11 +5,16 @@
 body {
     font-family: Ubuntu;
     background-color: var(--dark-blue);
+    overflow-x: hidden;
 }
 
 /* ==========================================================================
    Header Styles
 ========================================================================== */
+
+.header-grid-item {
+    padding-bottom: 1rem;
+}
 
 .title {
     font-size: var(--largest-txt);
@@ -34,10 +39,18 @@ body {
 
 .heading {
     font-size: var(--large-txt);
+    color: var(--white);
 }
 
-.weather-icon {
-    width: clamp(2rem, 2.5vw, 6rem);
+.button {
+    width: clamp(3rem, 33% + 1px, 10rem);
+    padding: 0.5rem;
+    text-align: center;
+    border: none;
+    border-right: 5px solid var(--dark-blue);
+    border-bottom: 5px solid var(--dark-blue);
+    border-radius: 1rem;
+    background-color: var(--white);
 }
 
 /* Search Section Styles
@@ -52,6 +65,7 @@ body {
     padding: 0.5rem;
     text-align: center;
     background-color: var(--white);
+    font-size: var(--small-txt);
 }
 
 .search-dropdown{
@@ -59,17 +73,7 @@ body {
     padding: 0.5rem;
     text-align: left;
     background-color: var(--white);
-}
-
-.search-button {
-    width: clamp(3rem, 33% + 1px, 10rem);
-    padding: 0.5rem;
-    text-align: center;
-    border: none;
-    border-right: 5px solid var(--dark-blue);
-    border-bottom: 5px solid var(--dark-blue);
-    border-radius: 1rem;
-    background-color: var(--white);
+    font-size: var(--small-txt);
 }
 
 /* History Section Styles
@@ -87,22 +91,15 @@ body {
     background-color: var(--white);
 }
 
-.history-button {
-    width: clamp(3rem, 33% + 1px, 10rem);
-    padding: 0.5rem;
-    text-align: center;
-    border: none;
-    border-right: 5px solid var(--dark-blue);
-    border-bottom: 5px solid var(--dark-blue);
-    border-radius: 1rem;
-    background-color: var(--white);
-}
-
 /* Current Weather Section Styles
 ========================================================================== */
 
 .weather-grid-item {
     font-size: var(--normal-txt);
+}
+
+.current-icon {
+    width: clamp(4rem, 3.5vw, 12rem);
 }
 
 /* Weather Forecast Section Styles
@@ -117,4 +114,8 @@ body {
 
 .forecast-day-grid-item {
     font-size: var(--small-txt);
+}
+
+.weather-icon {
+    width: clamp(2rem, 2.5vw, 6rem);
 }

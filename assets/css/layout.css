@@ -144,8 +144,9 @@
     grid-template-areas:
     "history-label"
     "history-input"
-    "history-button";
-    grid-template-rows: 1fr 2fr 2fr;
+    "history-button"
+    "delete-button";
+    grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 1fr;
 }
 
@@ -162,6 +163,11 @@
 
 #history-button {
     grid-area: history-button;
+    place-self: start center;
+}
+
+#delete-button {
+    grid-area: delete-button;
     place-self: start center;
 }
 

@@ -38,12 +38,12 @@
             <!-- Header -->
             <header id="header">
                 <div class="header-grid-container body-item-container">
-                    <h1 id="header-heading" class="header-grid-item title">
-                        Weather Dashboard
-                    </h1>
                     <h2 id="status" class="header-grid-item status hide">
                         <!-- Content injected by main.js -->
                     </h2>
+                    <h1 id="header-heading" class="header-grid-item title">
+                        Weather Dashboard
+                    </h1>
                 </div>
             </header>
 
@@ -56,7 +56,7 @@
                         <form class="search-form">
                             <div class="search-grid-container main-item-container">
                                 <label id="city-label" class="search-grid-item search-label" for="city-input">
-                                    City Name
+                                    City
                                 </label>
                                 <input id="city-input" class="search-grid-item search-input" name="city" type="text" required>
                                 <label id="state-label" class="search-grid-item search-label" for="state-input">
@@ -214,8 +214,8 @@
                                         WY  
                                     </option>
                                 </select>
-                                <button id="search-button" class="search-grid-item search-button" title="Search">
-                                    <img class="action-icon" src="./assets/icons/actions/search.svg">
+                                <button id="search-button" class="search-grid-item button" title="Search">
+                                    <img class="action-icon" src="./assets/icons/actions/search.svg" alt="search icon">
                                 </button>
                             </div>
                         </form>
@@ -225,14 +225,17 @@
                     <section id="history" class="main-grid-item">
                         <form class="history-form">
                             <div class="history-grid-container main-item-container">
-                                <label id="history-label" class="history-grid-item history-label">
+                                <label id="history-label" class="history-grid-item history-label" for="history-input">
                                     History
                                 </label>
                                 <select id="history-input" class="history-grid-item history-dropdown">
                                     <!-- Content injected by main.js -->
                                 </select>
-                                <button id="history-button" class="history-grid-item history-button">
-                                    <img class="action-icon" src="./assets/icons/actions/search.svg">
+                                <button id="history-button" class="history-grid-item button" title="Load from history">
+                                    <img class="action-icon" src="./assets/icons/actions/load.svg" alt="load icon">
+                                </button>
+                                <button id="delete-button" class="history-grid-item button" title="Delete all history">
+                                    <img class="action-icon" src="./assets/icons/actions/delete.svg" alt="delete icon">
                                 </button>
                             </div>
                         </form>
@@ -240,27 +243,27 @@
 
                     <!-- Current Weather -->
                     <section id="current-weather" class="main-grid-item">
-                        <div class="weather-grid-container main-item-container show">
+                        <div class="weather-grid-container main-item-container">
                             <h3 id="current-date" class="weather-grid-item">
                                 <!-- Content injected by init.js -->
                             </h3>
                             <h3 id="current-time" class="weather-grid-item">
                                 <!-- Content injected by init.js -->
                             </h3>
-                            <h3 id="selected-city" class="weather-grid-item">
+                            <h3 id="selected-city" class="weather-grid-item hide">
                                 <!-- Content injected by main.js -->
                             </h3>
-                            <h3 id="current-temp" class="weather-grid-item">
+                            <h3 id="current-temp" class="weather-grid-item hide">
                                 <!-- Content injected by main.js -->
                             </h3>
-                            <img id="current-icon" class="weather-grid-item weather-icon">
-                            <h3 id="weather-descr" class="weather-grid-item">
+                            <img id="current-icon" class="weather-grid-item current-icon hide" alt="weather icon">
+                            <h3 id="weather-descr" class="weather-grid-item hide">
                                 <!-- Content injected by main.js -->
                             </h3>
-                            <h3 id="current-wind" class="weather-grid-item">
+                            <h3 id="current-wind" class="weather-grid-item hide">
                                 <!-- Content injected by main.js -->
                             </h3>
-                            <h3 id="current-humidity" class="weather-grid-item">
+                            <h3 id="current-humidity" class="weather-grid-item hide">
                                 <!-- Content injected by main.js -->
                             </h3>
                         </div>
@@ -268,7 +271,7 @@
 
                     <!-- 5-Day Forecast -->
                     <section id="weather-forecast" class="main-grid-item">
-                        <div class="forecast-grid-container main-item-container show">
+                        <div class="forecast-grid-container main-item-container">
                             <h3 id="forecast-heading" class="heading">
                                 5-Day Forecast
                             </h3>

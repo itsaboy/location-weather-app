@@ -104,7 +104,7 @@ const getForecast = async (data) => {
 const updateCurrentWeather = () => {
     $("#selected-city").text(`${cityPlusState.city}, ${cityPlusState.state}`);
     $("#weather-descr").text(currentWeather);
-    $("#current-temp").text(`${currentTemperature}°`);
+    $("#current-temp").text(`${currentTemperature}° F`);
     $("#current-wind").text(`Wind: ${currentWindSpeed} mph`);
     $("#current-humidity").text(`Humidity: ${currentHumidity}%`);
     if (currentWeather === "Clear") {
@@ -126,7 +126,7 @@ const updateCurrentWeather = () => {
 const updateForecast = () => {
     $("#day1-date").text(dayOneDate);
     $("#day1-descr").text(dayOneWeather);
-    $("#day1-temp").text(`${dayOneTemperature}°`);
+    $("#day1-temp").text(`${dayOneTemperature}° F`);
     $("#day1-wind").text(`Wind: ${dayOneWindSpeed} mph`);
     $("#day1-humidity").text(`Humidity: ${dayOneHumidity}%`);
     if (dayOneWeather === "Clear") {
@@ -145,7 +145,7 @@ const updateForecast = () => {
 
     $("#day2-date").text(dayTwoDate);
     $("#day2-descr").text(dayTwoWeather);
-    $("#day2-temp").text(`${dayTwoTemperature}°`);
+    $("#day2-temp").text(`${dayTwoTemperature}° F`);
     $("#day2-wind").text(`Wind: ${dayTwoWindSpeed} mph`);
     $("#day2-humidity").text(`Humidity: ${dayTwoHumidity}%`);
     if (dayTwoWeather === "Clear") {
@@ -164,7 +164,7 @@ const updateForecast = () => {
 
     $("#day3-date").text(dayThreeDate);
     $("#day3-descr").text(dayThreeWeather);
-    $("#day3-temp").text(`${dayThreeTemperature}°`);
+    $("#day3-temp").text(`${dayThreeTemperature}° F`);
     $("#day3-wind").text(`Wind: ${dayThreeWindSpeed} mph`);
     $("#day3-humidity").text(`Humidity: ${dayThreeHumidity}%`);
     if (dayThreeWeather === "Clear") {
@@ -183,7 +183,7 @@ const updateForecast = () => {
 
     $("#day4-date").text(dayFourDate);
     $("#day4-descr").text(dayFourWeather);
-    $("#day4-temp").text(`${dayFourTemperature}°`);
+    $("#day4-temp").text(`${dayFourTemperature}° F`);
     $("#day4-wind").text(`Wind: ${dayFourWindSpeed} mph`);
     $("#day4-humidity").text(`Humidity: ${dayFourHumidity}%`);
     if (dayFourWeather === "Clear") {
@@ -202,7 +202,7 @@ const updateForecast = () => {
 
     $("#day5-date").text(dayFiveDate);
     $("#day5-descr").text(dayFiveWeather);
-    $("#day5-temp").text(`${dayFiveTemperature}°`);
+    $("#day5-temp").text(`${dayFiveTemperature}° F`);
     $("#day5-wind").text(`Wind: ${dayFiveWindSpeed} mph`);
     $("#day5-humidity").text(`Humidity: ${dayFiveHumidity}%`);
     if (dayFiveWeather === "Clear") {
@@ -252,6 +252,8 @@ const populateHistory = () => {
 // Show or hide elements
 const showHidden = () => {
     $(".forecast-day-grid-container").removeClass("hide").addClass("show");
+    $(".weather-grid-item").removeClass("hide").addClass("show");
+    slideAnimation();
 };
 
 const showStatus = (message) => {
@@ -261,4 +263,19 @@ const showStatus = (message) => {
 
 const hideStatus = () => {
     $(".status").removeClass("show").addClass("hide");
+};
+
+// Animate elements
+
+const addAnimation = () => {
+    $(".forecast-day-grid-container").addClass("slide-in");
+};
+
+const resetAnimation = () => {
+    $(".forecast-day-grid-container").removeClass("slide-in");
+};
+
+const slideAnimation = () => {
+    addAnimation();
+    setTimeout(resetAnimation, 1500);
 };

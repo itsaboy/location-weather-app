@@ -32,12 +32,11 @@ $().ready(() => {
                 city: city,
                 state: state
             };
-            console.log(cityPlusState);
         });
     };
 
-    // History button event listener
-    const historyLoad = () => {
+    // Load history button event listener
+    const loadButton = () => {
         $("#history-button").on("click", function (event) {
             event.preventDefault();
             newSearch = false;
@@ -49,11 +48,22 @@ $().ready(() => {
         });
     };
 
+    // Delete history button event listener
+    const deleteHistory = () => {
+        $("#delete-button").on("click", function (event) {
+            event.preventDefault();
+            localStorage.clear();
+            history = [];
+            $("#history-input").empty();
+            $("#history-input").append(`<option selected disabled>City, State</option>`);
+        });
+    };
+
     // Function Calls
     setInterval(getDateAndTime, 1);
     loadData();
     searchForCity();
     optionSelection();
-    historyLoad();
-
+    loadButton();
+    deleteHistory();
 });

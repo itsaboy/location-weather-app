@@ -57,7 +57,6 @@ let dayFourDate = dayjs().add(4, "day").startOf("day").format("MMM-D-YYYY");
 let dayFiveDate = dayjs().add(5, "day").startOf("day").format("MMM-D-YYYY");
 
 // Weather icon sources
-
 const sunny = "./assets/icons/weather/sunny.svg";
 const cloudy = "./assets/icons/weather/cloudy.svg";
 const rainy = "./assets/icons/weather/rainy.svg";
