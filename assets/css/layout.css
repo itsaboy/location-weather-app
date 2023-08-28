@@ -182,8 +182,8 @@
 
 .weather-grid-container {
     grid-template-areas:
-    "current-date selected-city current-icon current-wind"
-    "current-time current-temp weather-descr current-humidity";
+    "current-time selected-city current-icon current-wind"
+    "current-date current-temp weather-descr current-humidity";
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 80%;

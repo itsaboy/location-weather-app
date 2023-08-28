@@ -45,10 +45,19 @@ const getWeather = async (data) => {
     const weatherData = await res.json();
 
     if (res.status === 200) {
+        unixTime = dayjs().utc().unix() * 1000;
+        unixOffset = weatherData.timezone;
+        console.log(unixTime);
+        console.log(unixOffset);
+        currentDate = dayjs(unixTime - unixOffset).format("MMM-D-YYYY");
+        currentDayOfWeek = dayjs(unixTime - unixOffset).format("dddd");
+        console.log(currentDate);
+        console.log(currentDayOfWeek);
         currentWeather = weatherData.weather[0].main;
         currentTemperature = weatherData.main.temp;
         currentHumidity = weatherData.main.humidity;
         currentWindSpeed = weatherData.wind.speed;
+        getDateAndTime();
         updateCurrentWeather();
     } else {
         let message = "Something went wrong!";
@@ -66,26 +75,31 @@ const getForecast = async (data) => {
     const forecastData = await res.json();
 
     if (res.status === 200) {
+        dayOneDate = dayjs(unixTime).add(1, "day").startOf("day").format("MMM-D-YYYY");
         dayOneWeather = forecastData.list[0].weather[0].main;
         dayOneTemperature = forecastData.list[0].main.temp;
         dayOneHumidity = forecastData.list[0].main.humidity;
         dayOneWindSpeed = forecastData.list[0].wind.speed;
 
+        dayTwoDate = dayjs(unixTime).add(2, "day").startOf("day").format("MMM-D-YYYY");
         dayTwoWeather = forecastData.list[1].weather[0].main;
         dayTwoTemperature = forecastData.list[1].main.temp;
         dayTwoHumidity = forecastData.list[1].main.humidity;
         dayTwoWindSpeed = forecastData.list[1].wind.speed;
 
+        dayThreeDate = dayjs(unixTime).add(3, "day").startOf("day").format("MMM-D-YYYY");
         dayThreeWeather = forecastData.list[2].weather[0].main;
         dayThreeTemperature = forecastData.list[2].main.temp;
         dayThreeHumidity = forecastData.list[2].main.humidity;
         dayThreeWindSpeed = forecastData.list[2].wind.speed;
 
+        dayFourDate = dayjs(unixTime).add(4, "day").startOf("day").format("MMM-D-YYYY");
         dayFourWeather = forecastData.list[3].weather[0].main;
         dayFourTemperature = forecastData.list[3].main.temp;
         dayFourHumidity = forecastData.list[3].main.humidity;
         dayFourWindSpeed = forecastData.list[3].wind.speed;
 
+        dayFiveDate = dayjs(unixTime).add(5, "day").startOf("day").format("MMM-D-YYYY");
         dayFiveWeather = forecastData.list[4].weather[0].main;
         dayFiveTemperature = forecastData.list[4].main.temp;
         dayFiveHumidity = forecastData.list[4].main.humidity;
@@ -218,6 +232,12 @@ const updateForecast = () => {
     } else if (currentWeather === "Mist") {
         $("#current-icon").attr("src", misty);
     };
+};
+
+// Get current date and time
+const getDateAndTime = () => {    
+    $("#current-date").text(currentDate);    
+    $("#current-time").text(currentDayOfWeek);
 };
 
 // Save Data to Local Storage

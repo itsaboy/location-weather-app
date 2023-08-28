@@ -1,6 +1,6 @@
 // API variables
 const endpointRoot = "https://api.openweathermap.org";
-const weatherAPIKey = "";
+const weatherAPIKey = "fd03838b9b2723c3ea2712dc8e4df0e6";
 
 // Search variables
 let history = [];
@@ -43,18 +43,19 @@ let dayFiveWindSpeed;
 
 // Time settings
 dayjs.extend(window.dayjs_plugin_utc);
-dayjs.extend(window.dayjs_plugin_timezone);
 
-// Current Time
+// Current time & date
+let unixTime;
+let unixOffset;
 let currentDate;
-let currentTime;
+let currentDayOfWeek;
 
 // 5-day forecast dates
-let dayOneDate = dayjs().add(1, "day").startOf("day").format("MMM-D-YYYY");
-let dayTwoDate = dayjs().add(2, "day").startOf("day").format("MMM-D-YYYY");
-let dayThreeDate = dayjs().add(3, "day").startOf("day").format("MMM-D-YYYY");
-let dayFourDate = dayjs().add(4, "day").startOf("day").format("MMM-D-YYYY");
-let dayFiveDate = dayjs().add(5, "day").startOf("day").format("MMM-D-YYYY");
+let dayOneDate;
+let dayTwoDate;
+let dayThreeDate;
+let dayFourDate;
+let dayFiveDate;
 
 // Weather icon sources
 const sunny = "./assets/icons/weather/sunny.svg";
