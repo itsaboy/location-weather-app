@@ -48,8 +48,9 @@
    Button Pseudos
 ========================================================================== */
 
-.button:hover {
+.button:hover, .button:focus {
     cursor: pointer;
+    background-color: var(--white);
 }
 
 .button:active {

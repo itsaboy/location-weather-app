@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Screen Width Below 1210px
+========================================================================== */
+
+@media only screen and (max-width: 1210px) {
+
+    .main-grid-container {
+        grid-template-areas:
+        "search"
+        "current-weather"
+        "weather-forecast"
+        "history";
+        grid-template-rows: 1fr 2fr 6fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .search-grid-container {
+        grid-template-areas:
+        "city-label state-label search-button"
+        "city-input state-input search-button";
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    #city-input {
+        place-self: start center;
+    }
+    
+    #state-input {
+        place-self: start center;
+    }
+
+    .history-grid-container {
+        grid-template-areas:
+        "history-label load-label delete-label"
+        "history-input history-button delete-button";
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .forecast-grid-container {
+        grid-template-areas:
+        "forecast-heading"
+        "day1"
+        "day2"
+        "day3"
+        "day4"
+        "day5";
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #forecast-heading {
+        place-self: center;
+    }
+
+    .forecast-day-grid-container {
+        gap: 1rem;
+        margin-bottom: 2rem;
+        grid-template-rows:
+            repeat(
+                auto-fit,
+                minmax(
+                    min(2rem, 75%),
+                    1fr
+                )
+            );   
+    }
+
+    .footer-grid-container {
+        margin-top: 2rem;
+    }
+
+}
+
+/* ==========================================================================
+   Screen Width Below 842px
+========================================================================== */
+
+@media only screen and (max-width: 842px) {
+
+    .weather-grid-container {
+        grid-template-areas:
+        "current-weather-heading current-weather-heading"
+        "selected-city selected-city"
+        "current-time current-date"
+        "current-icon weather-descr"
+        "current-temp current-temp"
+        "current-wind current-humidity";
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================================================================
+   Screen Width Below 665px
+========================================================================== */
+
+@media only screen and (max-width: 665px) {
+
+    .history-grid-container {
+        grid-template-areas:
+        "history-label history-input"
+        "load-label delete-label"
+        "history-button delete-button";
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #history-input {
+        grid-area: history-input;
+        place-self: center;
+    }
+
+    .forecast-day-grid-container {
+        grid-template-rows:
+            repeat(
+                auto-fit,
+                minmax(
+                    min(2rem, 25%),
+                    1fr
+                )
+            );   
+    }
+
+}
+
+/* ==========================================================================
+   Screen Width Below 400px
+========================================================================== */
+
+@media only screen and (max-width: 400px) {
+
+    .header-grid-container {
+        grid-template-areas:
+        "header-heading"
+        "status";
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #header-heading {
+        place-self: center;
+    }
+    
+    .search-grid-container {
+        grid-template-areas:
+        "city-label"
+        "city-input"
+        "state-label"
+        "state-input"
+        "search-button";
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr; 
+    }
+
+    .history-grid-container {
+        grid-template-areas:
+        "history-label"
+        "history-input"
+        "load-label"
+        "history-button"
+        "delete-label"
+        "delete-button";
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+    }
+}

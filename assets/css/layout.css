@@ -42,7 +42,7 @@
     grid-template-areas:
     "status header-heading";
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 3fr;
 }
 
 /* Header Grid Item IDs */
@@ -66,7 +66,7 @@
     "search current-weather"
     "history weather-forecast";
     grid-template-rows: 1fr 3fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
 }
 
 /* Main Grid Item IDs */
@@ -163,9 +163,17 @@
     place-self: start center;
 }
 
+#load-label {
+    grid-area: load-label;
+}
+
 #history-button {
     grid-area: history-button;
     place-self: start center;
+}
+
+#delete-label {
+    grid-area: delete-label;
 }
 
 #delete-button {
@@ -184,14 +192,19 @@
 
 .weather-grid-container {
     grid-template-areas:
+    "current-weather-heading current-weather-heading current-weather-heading current-weather-heading"
     "current-time selected-city current-icon current-wind"
     "current-date current-temp weather-descr current-humidity";
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 80%;
 }
 
 /* Weather Grid Item IDs */
+
+#current-weather-heading {
+    grid-area: current-weather-heading;
+}
 
 #current-date {
     grid-area: current-date;
@@ -287,4 +300,15 @@
                 1fr
             )
         );   
+}
+
+/* ==========================================================================
+   Footer Grid Container
+========================================================================== */
+
+.footer-grid-container {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
 }

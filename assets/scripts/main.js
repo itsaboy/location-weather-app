@@ -4,12 +4,14 @@ const getLocation = async (cityPlusState) => {
     const res = await fetch(req);
     const geoData = await res.json();
 
+    // Shows user the requested info is loading
+    message = "Loading...";
+    statusInfo(message);
     // Checks if searched location already exists in the history
     if (history.some(obj => obj.city === cityPlusState.city)
         && history.some(obj => obj.state === cityPlusState.state)
         && newSearch === true) {
         newSearch = false;
-        
         message = "Already in history!";
         statusInfo(message);
     } else {
@@ -18,16 +20,12 @@ const getLocation = async (cityPlusState) => {
             message = "Location not found!";
             statusInfo(message);
         } else {
-            // Shows user the requested info is loading
-            message = "Loading...";
-            statusInfo(message);
             /* Pushes new location data to the history array, saves the 
             data locally, then calls the getWeather and getForecast functions
             with the received geo-data as arguments */
             if (res.status === 200 && newSearch === true) {
                 history.push(cityPlusState);
                 saveData();
-
                 getWeather(geoData[0]);
                 getForecast(geoData[0]);
             /* Calls the getWeather and getForecast functions with the received
@@ -67,7 +65,6 @@ const getWeather = async (data) => {
         currentTemperature = weatherData.main.temp;
         currentHumidity = weatherData.main.humidity;
         currentWindSpeed = weatherData.wind.speed;
-
         updateCurrentWeather();
     // Error handling
     } else {
@@ -142,7 +139,6 @@ const updateCurrentWeather = () => {
     $("#current-temp").text(`${currentTemperature}° F`);
     $("#current-wind").text(`Wind: ${currentWindSpeed} mph`);
     $("#current-humidity").text(`Humidity: ${currentHumidity}%`);
-
     // Changes current weather icon
     if (currentWeather === "Clear") {
         $("#current-icon").attr("src", sunny);
@@ -169,7 +165,6 @@ const updateForecast = () => {
     $("#day1-temp").text(`${dayOneTemperature}° F`);
     $("#day1-wind").text(`Wind: ${dayOneWindSpeed} mph`);
     $("#day1-humidity").text(`Humidity: ${dayOneHumidity}%`);
-
     // Selects forecast date's weather icon
     if (dayOneWeather === "Clear") {
         $("#day1-icon").attr("src", sunny);
@@ -191,7 +186,6 @@ const updateForecast = () => {
     $("#day2-temp").text(`${dayTwoTemperature}° F`);
     $("#day2-wind").text(`Wind: ${dayTwoWindSpeed} mph`);
     $("#day2-humidity").text(`Humidity: ${dayTwoHumidity}%`);
-
     // Selects forecast date's weather icon
     if (dayTwoWeather === "Clear") {
         $("#day2-icon").attr("src", sunny);
@@ -213,7 +207,6 @@ const updateForecast = () => {
     $("#day3-temp").text(`${dayThreeTemperature}° F`);
     $("#day3-wind").text(`Wind: ${dayThreeWindSpeed} mph`);
     $("#day3-humidity").text(`Humidity: ${dayThreeHumidity}%`);
-
     // Selects forecast date's weather icon
     if (dayThreeWeather === "Clear") {
         $("#day3-icon").attr("src", sunny);
@@ -235,7 +228,6 @@ const updateForecast = () => {
     $("#day4-temp").text(`${dayFourTemperature}° F`);
     $("#day4-wind").text(`Wind: ${dayFourWindSpeed} mph`);
     $("#day4-humidity").text(`Humidity: ${dayFourHumidity}%`);
-
     // Selects forecast date's weather icon
     if (dayFourWeather === "Clear") {
         $("#day4-icon").attr("src", sunny);
@@ -257,7 +249,6 @@ const updateForecast = () => {
     $("#day5-temp").text(`${dayFiveTemperature}° F`);
     $("#day5-wind").text(`Wind: ${dayFiveWindSpeed} mph`);
     $("#day5-humidity").text(`Humidity: ${dayFiveHumidity}%`);
-
     // Selects forecast date's weather icon
     if (dayFiveWeather === "Clear") {
         $("#day5-icon").attr("src", sunny);

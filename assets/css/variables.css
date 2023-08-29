@@ -8,9 +8,10 @@
     --dark-blue: rgb(65, 65, 100);
     --reg-blue: rgb(8,146,208);
     --light-blue: rgb(210, 195, 220);
+    --yellow: rgb(225,230,35);
     --black: rgb(15,15,15);
     --white: rgb(225,225,225);
-    --yellow: rgb(224,231,34);
+    --gray: rgb(190,195,200);
 
     /* Font Sizes */
     --largest-txt: clamp(1rem, 3vw + 1rem, 5rem);
