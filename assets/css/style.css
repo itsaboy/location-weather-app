@@ -39,7 +39,7 @@ body {
 
 .heading {
     font-size: var(--large-txt);
-    color: var(--yellow);
+    color: var(--black);
 }
 
 .button {
