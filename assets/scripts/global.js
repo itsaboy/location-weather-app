@@ -44,7 +44,10 @@ let dayFiveWindSpeed;
 // Time settings
 dayjs.extend(window.dayjs_plugin_utc);
 
-// Current time & date
+// Status message
+let message = "";
+
+// Current time, date, day of week
 let unixTime;
 let unixOffset;
 let currentDate;

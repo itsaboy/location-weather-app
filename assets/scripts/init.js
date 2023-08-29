@@ -1,6 +1,7 @@
 $().ready(() => {
 
-    // Search button event listener
+    /* Button that sets properties of the cityPlusState object to 
+    be passed into the getLocation function as an argument */
     const searchForCity = () => {
         $("#search-button").on("click", function (event) {
             event.preventDefault();
@@ -15,9 +16,10 @@ $().ready(() => {
         });
     };
 
-    // Option selection
+    /* On change event listener that sets properties of the cityPlusState
+    object when an option in the history dropdown menu is selected */
     const optionSelection = () => {
-        $("#history-input").on("change", function () {
+        $("#history-input").on("change", () => {
             city = $("#history-input option:selected").attr("city");
             state = $("#history-input option:selected").attr("state");
             cityPlusState = {
@@ -27,7 +29,8 @@ $().ready(() => {
         });
     };
 
-    // Load history button event listener
+    /* Button that calls the getLocation function with the cityPlusState object
+    set by the history dropdown as its argument */
     const loadButton = () => {
         $("#history-button").on("click", function (event) {
             event.preventDefault();
@@ -40,7 +43,7 @@ $().ready(() => {
         });
     };
 
-    // Delete history button event listener
+    // Button that clears the local storage, history array and history dropdown options
     const deleteHistory = () => {
         $("#delete-button").on("click", function (event) {
             event.preventDefault();
