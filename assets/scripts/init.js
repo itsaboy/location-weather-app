@@ -12,7 +12,13 @@ $().ready(() => {
                 city: city,
                 state: state
             };
-            getLocation(cityPlusState);
+            // Prevents user from leaving city search input empty
+            if (!city) {
+                message = "No city selected!";
+                statusInfo(message);
+            } else {
+                getLocation(cityPlusState);
+            };
         });
     };
 
@@ -35,9 +41,15 @@ $().ready(() => {
         $("#history-button").on("click", function (event) {
             event.preventDefault();
             newSearch = false;
-            for (let i = 0; i < history.length; i++) {
-                if (cityPlusState.city === history[i].city && cityPlusState.state === history[i].state) {
-                    getLocation(cityPlusState);
+            // Prevents console error if no location is selected in dropdown
+            if (!city) {
+                message = "No location selected!";
+                statusInfo(message);
+            } else {
+                for (let i = 0; i < history.length; i++) {
+                    if (cityPlusState.city === history[i].city && cityPlusState.state === history[i].state) {
+                        getLocation(cityPlusState);
+                    };
                 };
             };
         });

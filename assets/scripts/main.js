@@ -9,25 +9,25 @@ const getLocation = async (cityPlusState) => {
         && history.some(obj => obj.state === cityPlusState.state)
         && newSearch === true) {
         newSearch = false;
+        
         message = "Already in history!";
         statusInfo(message);
-        return;
     } else {
-        // Shows user the requested info is loading
-        message = "Loading...";
-        statusInfo(message);
         // Checks if searched location was valid
         if (!geoData[0]) {
             message = "Location not found!";
             statusInfo(message);
-            return;
         } else {
+            // Shows user the requested info is loading
+            message = "Loading...";
+            statusInfo(message);
             /* Pushes new location data to the history array, saves the 
             data locally, then calls the getWeather and getForecast functions
             with the received geo-data as arguments */
             if (res.status === 200 && newSearch === true) {
                 history.push(cityPlusState);
                 saveData();
+
                 getWeather(geoData[0]);
                 getForecast(geoData[0]);
             /* Calls the getWeather and getForecast functions with the received

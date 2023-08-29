@@ -39,7 +39,7 @@ body {
 
 .heading {
     font-size: var(--large-txt);
-    color: var(--white);
+    color: var(--black);
 }
 
 .button {
@@ -80,7 +80,7 @@ body {
 ========================================================================== */
 
 .history-label {
-    font-size: var(--normal-txt);
+    font-size: var(--small-txt);
 }
 
 .history-dropdown {
