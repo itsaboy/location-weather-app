@@ -47,12 +47,8 @@ const getWeather = async (data) => {
     if (res.status === 200) {
         unixTime = dayjs().utc().unix() * 1000;
         unixOffset = weatherData.timezone;
-        console.log(unixTime);
-        console.log(unixOffset);
         currentDate = dayjs(unixTime - unixOffset).format("MMM-D-YYYY");
         currentDayOfWeek = dayjs(unixTime - unixOffset).format("dddd");
-        console.log(currentDate);
-        console.log(currentDayOfWeek);
         currentWeather = weatherData.weather[0].main;
         currentTemperature = weatherData.main.temp;
         currentHumidity = weatherData.main.humidity;
