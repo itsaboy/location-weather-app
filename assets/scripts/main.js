@@ -136,7 +136,7 @@ const updateCurrentWeather = () => {
     $("#current-time").text(currentDayOfWeek);
     $("#selected-city").text(`${cityPlusState.city}, ${cityPlusState.state}`);
     $("#weather-descr").text(currentWeather);
-    $("#current-temp").text(`${currentTemperature}° F`);
+    $("#current-temp").text(`${currentTemperature.toFixed(0)}° F`);
     $("#current-wind").text(`Wind: ${currentWindSpeed} mph`);
     $("#current-humidity").text(`Humidity: ${currentHumidity}%`);
     // Changes current weather icon
@@ -162,7 +162,7 @@ const updateForecast = () => {
     // Day one
     $("#day1-date").text(dayOneDate);
     $("#day1-descr").text(dayOneWeather);
-    $("#day1-temp").text(`${dayOneTemperature}° F`);
+    $("#day1-temp").text(`${dayOneTemperature.toFixed(0)}° F`);
     $("#day1-wind").text(`Wind: ${dayOneWindSpeed} mph`);
     $("#day1-humidity").text(`Humidity: ${dayOneHumidity}%`);
     // Selects forecast date's weather icon
@@ -183,7 +183,7 @@ const updateForecast = () => {
     // Day two
     $("#day2-date").text(dayTwoDate);
     $("#day2-descr").text(dayTwoWeather);
-    $("#day2-temp").text(`${dayTwoTemperature}° F`);
+    $("#day2-temp").text(`${dayTwoTemperature.toFixed(0)}° F`);
     $("#day2-wind").text(`Wind: ${dayTwoWindSpeed} mph`);
     $("#day2-humidity").text(`Humidity: ${dayTwoHumidity}%`);
     // Selects forecast date's weather icon
@@ -204,7 +204,7 @@ const updateForecast = () => {
     // Day three
     $("#day3-date").text(dayThreeDate);
     $("#day3-descr").text(dayThreeWeather);
-    $("#day3-temp").text(`${dayThreeTemperature}° F`);
+    $("#day3-temp").text(`${dayThreeTemperature.toFixed(0)}° F`);
     $("#day3-wind").text(`Wind: ${dayThreeWindSpeed} mph`);
     $("#day3-humidity").text(`Humidity: ${dayThreeHumidity}%`);
     // Selects forecast date's weather icon
@@ -225,7 +225,7 @@ const updateForecast = () => {
     // Day four
     $("#day4-date").text(dayFourDate);
     $("#day4-descr").text(dayFourWeather);
-    $("#day4-temp").text(`${dayFourTemperature}° F`);
+    $("#day4-temp").text(`${dayFourTemperature.toFixed(0)}° F`);
     $("#day4-wind").text(`Wind: ${dayFourWindSpeed} mph`);
     $("#day4-humidity").text(`Humidity: ${dayFourHumidity}%`);
     // Selects forecast date's weather icon
@@ -246,7 +246,7 @@ const updateForecast = () => {
     // Day five
     $("#day5-date").text(dayFiveDate);
     $("#day5-descr").text(dayFiveWeather);
-    $("#day5-temp").text(`${dayFiveTemperature}° F`);
+    $("#day5-temp").text(`${dayFiveTemperature.toFixed(0)}° F`);
     $("#day5-wind").text(`Wind: ${dayFiveWindSpeed} mph`);
     $("#day5-humidity").text(`Humidity: ${dayFiveHumidity}%`);
     // Selects forecast date's weather icon
