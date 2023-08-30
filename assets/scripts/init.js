@@ -19,6 +19,9 @@ $().ready(() => {
             } else {
                 getLocation(cityPlusState);
             };
+            // Clears form on submission
+            $("#city-input").val("");
+            $("#state-input").val("Alabama");
         });
     };
 
