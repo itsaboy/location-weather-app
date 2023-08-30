@@ -22,6 +22,8 @@ https://github.com/itsaboy/location-weather-app/assets/29829816/de4c2089-28dd-44
 ### Custom UI
 [UI Icons](https://icones.js.org/collection/ci)  
 [Weather Icons](https://icones.js.org/collection/wi)
+### Box Shadow Variables
+[Josh Comeau](https://www.joshwcomeau.com/shadow-palette/)
 
 ## Known Issue
 Because this site is hosted via the GitHub domain associated to this account,
